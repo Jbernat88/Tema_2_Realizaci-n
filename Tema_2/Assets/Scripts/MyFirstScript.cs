@@ -20,12 +20,33 @@ public class MyFirstScript : MonoBehaviour
     public bool isRaining = false;
 
     public int playerAge = 35;
-
+    public bool isCold;
 
 
     // Start is called before the first frame update
     void Start()
     {
+
+        if (x == 2 && y <= 5)
+
+        {
+            Debug.Log("Verdadero");
+
+        }
+        else
+        {
+            Debug.Log("Falso");
+        }
+
+
+
+
+
+
+
+
+
+
         /*
         Debug.Log($"Suma: {x} + {y} = {x + y}");
         Debug.Log("Resta: " + x + "-" + y + " = " + (x - y));  
@@ -33,45 +54,51 @@ public class MyFirstScript : MonoBehaviour
         Debug.Log($"Multiplicacion: {x} + {y} = {x * y}");
         Debug.Log(string.Format("Division: ¨{0} / {1} = {2}", x, y, x * y));
         */
-       /*      
-        if(isRaining == true)
+
+        if (isRaining == true)
         {
-            Debug.Log("Lleva paraguas");
-        } 
+            if (isCold == true)
+            {
+                Debug.Log("Lleva paraguas y sudadera");
+            }
+            else
+            {
+                Debug.Log("No llueve. No lleves paraguas");
+            }
+        }
         else
         {
-            Debu.Log("No lleves paraguas");
-        }
-        */
 
+
+            if (isCold == true)
+            {
+                Debug.Log("Lleva una sudadera");
+            }
+            else
+            {
+                Debug.Log("Disfruta del dia");
+            }
+
+        }
         if (playerAge >= 18)
-        {
-            Debug.Log("Eres mayor de edad");
+            {
+                Debug.Log("Eres mayor de edad");
 
-        }else if (playerAge >= 13)
-        {
-            Debug.Log("Eres adolescente");
+            }
+            else if (playerAge >= 13)
+            {
+                Debug.Log("Eres adolescente");
+            }
+            else
+            {
+                Debug.Log("Eres un niño");
+            }
         }
-        else
+
+        // Update is called once per frame
+        void Update()
         {
-            Debug.Log("Eres un niño");
+
         }
-         
-        
-
-        
-
-
-
-
-
-
-        
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}
