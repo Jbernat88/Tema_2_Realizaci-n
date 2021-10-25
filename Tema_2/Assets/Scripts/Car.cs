@@ -74,6 +74,45 @@ public class Car : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isOn)
+        {
+
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                transform.position += Vector3.right;
+            }
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                transform.position += Vector3.left;
+            }
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                transform.position += Vector3.up;
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                transform.position += Vector3.down;
+            }
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                transform.position += Vector3.forward;
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                transform.position += Vector3.back;
         
+            }
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                transform.rotation *= Quaternion.Euler (0, 10, 0);
+            }
+            if (Input.GetKeyDown(KeyCode.E)) 
+            {
+                transform.rotation *= Quaternion.Euler (0, -10, 0);
+            }
+
+
+        }
+
     }
 }

@@ -26,7 +26,7 @@ public class MyFirstScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        HelloWorld();
         if (x == 2 && y <= 5)
 
         {
@@ -39,8 +39,9 @@ public class MyFirstScript : MonoBehaviour
         }
 
 
-
-
+        //transform.position = new Vector3(0,0,0);
+        transform.position = Vector3.down;
+        Debug.Log(transform.position);
 
 
 
@@ -98,7 +99,44 @@ public class MyFirstScript : MonoBehaviour
         // Update is called once per frame
         void Update()
         {
-
+           //Debug.Log(transform.position);
+           if (Input.GetKeyDown(KeyCode.RightArrow))
+           {
+            transform.position += Vector3.right; 
+           }
+           if (Input.GetKeyDown(KeyCode.LeftArrow))
+           {
+            transform.position += Vector3.left;
+           }
+           if (Input.GetKeyDown(KeyCode.UpArrow))
+           {
+            transform.position += Vector3.up;
+           }
+           if (Input.GetKeyDown(KeyCode.DownArrow))
+           {
+            transform.position += Vector3.down;
+           }
+           if (Input.GetKeyDown(KeyCode.W))
+        {
+            transform.rotation *= Quaternion.Euler(0, 10, 0);
         }
+
+    
+    
+    
+    
+        }
+
+         public void HelloWorld()
+    {
+        Debug.Log("Hola, Mundo");
     }
+
+
+
+
+
+
+    }
+
 
