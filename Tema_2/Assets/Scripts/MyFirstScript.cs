@@ -43,11 +43,6 @@ public class MyFirstScript : MonoBehaviour
         transform.position = Vector3.down;
         Debug.Log(transform.position);
 
-
-
-
-
-
         /*
         Debug.Log($"Suma: {x} + {y} = {x + y}");
         Debug.Log("Resta: " + x + "-" + y + " = " + (x - y));  
@@ -82,61 +77,90 @@ public class MyFirstScript : MonoBehaviour
 
         }
         if (playerAge >= 18)
-            {
-                Debug.Log("Eres mayor de edad");
-
-            }
-            else if (playerAge >= 13)
-            {
-                Debug.Log("Eres adolescente");
-            }
-            else
-            {
-                Debug.Log("Eres un niño");
-            }
-        }
-
-        // Update is called once per frame
-        void Update()
         {
-           //Debug.Log(transform.position);
-           if (Input.GetKeyDown(KeyCode.RightArrow))
-           {
-            transform.position += Vector3.right; 
-           }
-           if (Input.GetKeyDown(KeyCode.LeftArrow))
-           {
-            transform.position += Vector3.left;
-           }
-           if (Input.GetKeyDown(KeyCode.UpArrow))
-           {
-            transform.position += Vector3.up;
-           }
-           if (Input.GetKeyDown(KeyCode.DownArrow))
-           {
-            transform.position += Vector3.down;
-           }
-           if (Input.GetKeyDown(KeyCode.W))
+            Debug.Log("Eres mayor de edad");
+
+        }
+        else if (playerAge >= 13)
         {
-            transform.rotation *= Quaternion.Euler(0, 10, 0);
+            Debug.Log("Eres adolescente");
+        }
+        else
+        {
+            Debug.Log("Eres un niño");
         }
 
-    
-    
-    
-    
-        }
+       Debug.Log(Product(1, 2));
 
-         public void HelloWorld()
+
+
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        MovementToDirection(KeyCode.D, Vector3.right);
+        MovementToDirection(KeyCode.A, Vector3.left);
+        MovementToDirection(KeyCode.W, Vector3.forward);
+        MovementToDirection(KeyCode.S, Vector3.back);
+        MovementToDirection(KeyCode.E, Vector3.up);
+        MovementToDirection(KeyCode.Q, Vector3.down);
+
+        MovmentToScale(KeyCode.X, Vector3.right);
+        MovmentToScale(KeyCode.Y, Vector3.up);
+        MovmentToScale(KeyCode.Z, Vector3.forward);
+
+        RotationToDirection(KeyCode.RightArrow, new Vector3(0, 10, 0));
+        RotationToDirection(KeyCode.LeftArrow, new Vector3(0, -10, 0));
+    }
+
+    public void HelloWorld()
     {
         Debug.Log("Hola, Mundo");
     }
 
 
-
-
-
+    public void MovementToDirection(KeyCode key, Vector3 direction)
+    {
+        if (Input.GetKeyDown(key))
+        {
+            transform.position += direction;
+        }
 
     }
+
+    public void MovmentToScale(KeyCode key,Vector3 axis)
+    {
+        if (Input.GetKeyDown(key))
+        {
+            transform.localScale += axis;
+        }
+    }
+
+
+    public void RotationToDirection(KeyCode key, Vector3 axis)
+    {
+        if (Input.GetKeyDown(key))
+        {
+            transform.rotation = Quaternion.Euler(axis);
+        }
+
+    }
+
+    public int Product(int num1, int num2)
+    {
+        int result = num1 * num2;
+        Debug.Log($"{num1} * {num2} = {result}");
+        return result;
+    }
+
+
+
+
+
+
+
+}
 
 
