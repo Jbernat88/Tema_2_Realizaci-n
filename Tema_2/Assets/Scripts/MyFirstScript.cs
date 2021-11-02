@@ -100,6 +100,7 @@ public class MyFirstScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Funciones de las variable de decision
         MovementToDirection(KeyCode.D, Vector3.right);
         MovementToDirection(KeyCode.A, Vector3.left);
         MovementToDirection(KeyCode.W, Vector3.forward);
@@ -121,7 +122,7 @@ public class MyFirstScript : MonoBehaviour
     }
 
 
-    public void MovementToDirection(KeyCode key, Vector3 direction)
+    public void MovementToDirection(KeyCode key, Vector3 direction) //Variable de deciion de POSICIÓN
     {
         if (Input.GetKeyDown(key))
         {
@@ -130,7 +131,7 @@ public class MyFirstScript : MonoBehaviour
 
     }
 
-    public void MovmentToScale(KeyCode key,Vector3 axis)
+    public void MovmentToScale(KeyCode key,Vector3 axis) //Variable de decision de SCALA
     {
         if (Input.GetKeyDown(key))
         {
@@ -139,7 +140,7 @@ public class MyFirstScript : MonoBehaviour
     }
 
 
-    public void RotationToDirection(KeyCode key, Vector3 axis)
+    public void RotationToDirection(KeyCode key, Vector3 axis)//Variable de decision de ROTACIÓN
     {
         if (Input.GetKeyDown(key))
         {
